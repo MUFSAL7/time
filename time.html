@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>time</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h2 id="output">HH:MM:SS AM</h2>
+    </div>
+</body>
+<script>
+    const getDateTime=()=>{
+        const localTime=new Date()
+        console.log(localTime);
+
+        const hours=localTime.getHours()
+        const minutes=localTime.getMinutes()
+        const seconds=localTime.getSeconds()
+        // console.log(output);
+        
+
+        output.innerHTML=`${hours}:${minutes}:${seconds} ${hours>12?'PM':'AM'}`
+
+        //this is also known as recursive function and call back function
+        setTimeout(()=> {
+            getDateTime()
+        },1000) //1000 is one second
+
+    }
+    getDateTime() 
+    
+</script>
+</html>
